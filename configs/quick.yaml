@@ -1,0 +1,17 @@
+# Smoke run used by CI. A few seconds.
+qubits: {min: 2, max: 5}
+n_samples: 60
+seed: 0
+fit_min_qubits: 3
+small_angle_sigma: 0.1
+out_dir: results_quick
+
+experiments:
+  cost:
+    series:
+      "Global cost": {cost: global, layers: 2, init: uniform}
+      "Local cost":  {cost: local,  layers: 2, init: uniform}
+  init:
+    series:
+      "Uniform random":  {cost: local, layers: "2n", init: uniform}
+      "Identity blocks": {cost: local, layers: "2n", init: identity_block}

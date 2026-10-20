@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, please cite it as below."
+title: "Barren Plateau Explorer: measuring vanishing gradients in variational quantum circuits"
+authors:
+  - family-names: Jeewani
+    given-names: Avinash
+version: 0.1.0
+date-released: 2026-10-20
+license: MIT
+repository-code: "https://github.com/avinashjeewani/barren-plateau-explorer"
+keywords:
+  - quantum machine learning
+  - barren plateaus
+  - pennylane
+  - reproducibility

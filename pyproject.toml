@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "barren-plateau-explorer"
+version = "0.1.0"
+description = "Measure how gradients vanish in variational quantum circuits as qubits grow, and which design choices prevent it."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Avinash Jeewani" }]
+requires-python = ">=3.10"
+dependencies = ["pennylane>=0.38", "numpy", "pandas", "matplotlib", "pyyaml"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

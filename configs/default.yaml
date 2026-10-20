@@ -1,0 +1,24 @@
+# Full run. About 5 minutes on a laptop CPU.
+qubits: {min: 2, max: 10}
+n_samples: 400          # random initializations per point
+seed: 0
+fit_min_qubits: 4       # decay rates are fitted on n >= this
+small_angle_sigma: 0.1
+out_dir: results
+
+# Layers can be a fixed number or scale with the qubit count ("n", "2n").
+experiments:
+  cost:
+    series:
+      "Global cost":   {cost: global, layers: 2, init: uniform}
+      "Local cost":    {cost: local,  layers: 2, init: uniform}
+  depth:
+    series:
+      "2 layers":      {cost: local, layers: 2,    init: uniform}
+      "n layers":      {cost: local, layers: "n",  init: uniform}
+      "2n layers":     {cost: local, layers: "2n", init: uniform}
+  init:
+    series:
+      "Uniform random":        {cost: local, layers: "2n", init: uniform}
+      "Small angle (σ = 0.1)": {cost: local, layers: "2n", init: small_angle}
+      "Identity blocks":       {cost: local, layers: "2n", init: identity_block}
